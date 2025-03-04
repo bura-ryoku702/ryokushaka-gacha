@@ -9,7 +9,7 @@
 <body>
     
     <h1>ツアーグッズ10000円ガチャ</h1>
-    <button onclick="gacha()">ガチャを回す！</button>
+    <button id="gacha-button">ガチャを回す！</button>
     <label for="budget">予算を選択:</label>
 <select id="budget">
     <option value="5000">5000円</option>
@@ -20,35 +20,26 @@
     <p>予算内で買えるChannel Ｕツアーグッズの組み合わせをランダム出力するレクリエーションサイト</p1>
 
     
-    <img src="20250304_194958.jpg" alt="商品画像" width="300">
-    <img src="20250304_195000.jpg" alt="ガチャ一覧" width="300">
+    <img src="20250304_194958.jpg" alt="商品画像" width="100">
+    <img src="20250304_195000.jpg" alt="ガチャ一覧" width="100">
     <div id="result"></div>
 
     <script src="gacha.js"></script>
-    <ul id="result-list"></ul>
     <a id="tweet-button" href="#" target="_blank">結果をツイート</a>
-    <script>
-    // 結果を表示
-    let resultList = document.getElementById("result-list");
-    resultList.innerHTML = ""; // 以前の結果を消す
-    result.forEach(item => {
-        let li = document.createElement("li");
-        li.textContent = item;
-        resultList.appendChild(li);
-    });
 
-    // ツイートボタンを更新
-    updateTweetButton(result);
-}
-
-function updateTweetButton(menuItems) {
+<script>
+function tweetResult(menuItems) {
     let text = "ツアーグッズ10000円ガチャの結果：\n";
-    text += menuItems.join("\n"); // メニューを1行ずつ追加
-    text += "\n#ツアーグッズ1万円ガチャ";
+    text += menuItems.join("\n"); // ガチャ結果をリストに
+    text += "\n#ツアーグッズ10000円ガチャ";
 
     let url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text);
     document.getElementById("tweet-button").href = url;
 }
+
+// 例：ガチャを回した後にこの関数を呼び出す
+let result = ["result"];
+tweetResult(result);
 </script>
 </body>
 </html>
