@@ -25,5 +25,20 @@
     <div id="result"></div>
 
     <script src="gacha.js"></script>
+    <a id="tweet-button" href="#" target="_blank">結果をツイート</a>
+
+<script>
+function tweetResult() {
+    let text = "ツアーグッズ10000円ガチャの結果：\n";
+    text += "・ミラノ風ドリア\n・小エビのサラダ\n・ドリンクバー\n"; // ← ここを動的に変える
+    text += "\n#ChannelＵ1万円ガチャ";
+
+    let url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text);
+    document.getElementById("tweet-button").href = url;
+}
+
+// ページ読み込み時 or ガチャ結果決定時に実行
+tweetResult();
+</script>
 </body>
 </html>
