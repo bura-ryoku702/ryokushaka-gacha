@@ -54,6 +54,7 @@ document.getElementById("gacha-button").addEventListener("click", function() {
 function tweetResult(menuItems) {
     let text = "ツアーグッズ10000円ガチャの結果：\n";
     text += menuItems.join("\n");
+    text += "\n合計金額: " + totalPrice + "円";  // 合計金額を追加
     text += "\n#ツアーグッズ10000円ガチャ";
 
     let url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text);
