@@ -77,3 +77,13 @@ document.getElementById("gacha-button").addEventListener("click", function() {
     // ツイートボタンを更新
     tweetResult(selectedItems);
 });
+
+function tweetResult(menuItems) {
+    let text = "ツアーグッズ10000円ガチャの結果：\n";
+    text += menuItems.join("\n"); // アイテム名 + 価格のリスト
+    text += "\n#ツアーグッズ10000円ガチャ";
+
+    let url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text);
+    
+    document.getElementById("tweet-button").href = url;
+}
