@@ -27,21 +27,7 @@
     <script src="gacha.js"></script>
     <ul id="result-list"></ul>
     <a id="tweet-button" href="#" target="_blank">結果をツイート</a>
-
-<script>
-function gacha() {
-    // ガチャの選択肢（例）
-    let menu = ["Channel U ツアーTシャツM", "Channel U ツアータオル", "ブロッコリー＆カリフラワーブランケット", "ブロッコリー＆カリフラワークッション", "メッシュバッグ2025"];
-    
-    // 10000円分のメニューをランダムに選ぶ
-    let result = []; 
-    while (result.length > 1){
-        let item = menu[Math.floor(Math.random() * menu.length)];
-        if (!result.includes(item)) {
-            result.push(item);
-        }
-    }
-
+    <script>
     // 結果を表示
     let resultList = document.getElementById("result-list");
     resultList.innerHTML = ""; // 以前の結果を消す
