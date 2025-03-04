@@ -26,8 +26,9 @@ const menu = [
 ];
 
 document.getElementById("gacha-button").addEventListener("click", function() {
-    let budget = parseInt(document.getElementById("budget").value);
+    let budget = parseInt(document.getElementById("budget").value); // 予算取得
         console.log("選択された予算:", budget);
+    let minBudget = budget - 1000; // 最低金額設定
     let selectedItems = [];
     let totalPrice = 0;
 
