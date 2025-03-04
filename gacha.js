@@ -46,7 +46,7 @@ document.getElementById("gacha-button").addEventListener("click", function() {
 
         // 結果を表示（合計金額も含む）
     
-    document.getElementById("result").innerHTML = "ガチャ結果:<br>" + selectedItems.join("<br>");
+    document.getElementById("result").innerHTML = "ガチャ結果:<br>" + selectedItems.join("<br>") + "<br><br>合計金額: " + totalPrice + "円";
 
     tweetResult(selectedItems);
 });
