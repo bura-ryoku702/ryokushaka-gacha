@@ -64,7 +64,7 @@ document.getElementById("gacha-button").addEventListener("click", function() {
         let selectedItem = items[randomIndex];
 
         if (totalPrice + selectedItem.price <= budget) {
-            selectedItems.push(selectedItem.name);
+            selectedItems.push(selectedItem.name,selectedItem.price);
             totalPrice += selectedItem.price;
         }
 
