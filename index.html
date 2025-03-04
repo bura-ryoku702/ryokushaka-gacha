@@ -28,17 +28,18 @@
     <a id="tweet-button" href="#" target="_blank">結果をツイート</a>
 
 <script>
-function tweetResult() {
-    let text = "ツアーグッズ10000円ガチャの結果：\n";
-    text += "・Channel U ツアーTシャツM\n・Channel U ツアータオル\n・ブロッコリー＆カリフラワーブランケット\n"; // ← ここを動的に変える
-    text += "\n#ChannelＵ1万円ガチャ";
+function tweetResult(menuItems) {
+    let text = "サイゼ1000円ガチャの結果：\n";
+    text += menuItems.join("\n"); // ガチャ結果をリストに
+    text += "\n#サイゼ1000円ガチャ";
 
     let url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text);
     document.getElementById("tweet-button").href = url;
 }
 
-// ページ読み込み時 or ガチャ結果決定時に実行
-tweetResult();
+// 例：ガチャを回した後にこの関数を呼び出す
+let result = ["Channel U ツアーTシャツM", "Channel U ツアータオル", "ブロッコリー＆カリフラワーブランケット"];
+tweetResult(result);
 </script>
 </body>
 </html>
