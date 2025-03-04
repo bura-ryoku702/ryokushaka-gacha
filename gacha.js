@@ -44,20 +44,23 @@ document.getElementById("gacha-button").addEventListener("click", function() {
         availableItems.splice(randomIndex, 1);
     }
 
-        // 結果を表示（合計金額も含む）
-    
-    document.getElementById("result").innerHTML = "ガチャ結果:<br>" + selectedItems.join("<br>") + "<br><br>合計金額: " + totalPrice + "円";
+    // 結果を表示（合計金額も含む）
+    document.getElementById("result").innerHTML = 
+        "ガチャ結果:<br>" + selectedItems.join("<br>") + 
+        "<br><br>合計金額: " + totalPrice + "円";
 
-    tweetResult(selectedItems);
+    // ツイートの結果を更新
+    tweetResult(selectedItems, totalPrice); // 合計金額も渡す
 });
 
-function tweetResult(menuItems) {
-    let text = "ツアーグッズ10000円ガチャの結果：\n";
+function tweetResult(menuItems, totalPrice) {
+    let text = "ツアーグッズガチャの結果：\n";
     text += menuItems.join("\n");
     text += "\n合計金額: " + totalPrice + "円";  // 合計金額を追加
-    text += "\n#ツアーグッズ10000円ガチャ";
+    text += "\n#ツアーグッズガチャ";
 
     let url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text);
     
+    // tweet-buttonのhrefを更新してツイートリンクを作成
     document.getElementById("tweet-button").href = url;
 }
