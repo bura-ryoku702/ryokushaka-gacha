@@ -31,7 +31,7 @@ document.getElementById("gacha-button").addEventListener("click", function() {
     let selectedItems = [];
     let totalPrice = 0;
 
-    while (budget-1000< totalPrice < budget) {
+    while (budget < totalPrice < budget) {
         let item = menu[Math.floor(Math.random() * menu.length)];
         if (totalPrice + item.price > budget) break;
         selectedItems.push(item);
