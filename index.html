@@ -34,12 +34,9 @@ function tweetResult(menuItems) {
     text += "\n#ツアーグッズ10000円ガチャ";
 
     let url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text);
+    
     document.getElementById("tweet-button").href = url;
 }
-
-// 例：ガチャを回した後にこの関数を呼び出す
-let result = [""];
-tweetResult(result);
 </script>
 </body>
 </html>
