@@ -34,7 +34,8 @@ function gacha() {
     let menu = ["Channel U ツアーTシャツM", "Channel U ツアータオル", "ブロッコリー＆カリフラワーブランケット", "ブロッコリー＆カリフラワークッション", "メッシュバッグ2025"];
     
     // 10000円分のメニューをランダムに選ぶ
-    let result = []; {
+    let result = []; 
+    while (result.length > 1){
         let item = menu[Math.floor(Math.random() * menu.length)];
         if (!result.includes(item)) {
             result.push(item);
