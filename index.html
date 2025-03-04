@@ -7,36 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
     <h1>ツアーグッズ10000円ガチャ</h1>
     <button id="gacha-button">ガチャを回す！</button>
     <label for="budget">予算を選択:</label>
-<select id="budget">
-    <option value="5000">5000円</option>
-    <option value="10000">10000円</option>
-    <option value="15000">15000円</option>
-    <option value="20000">20000円</option>
-</select>
-    <p>予算内で買えるChannel Ｕツアーグッズの組み合わせをランダム出力するレクリエーションサイト</p1>
+    <select id="budget">
+        <option value="5000">5000円</option>
+        <option value="10000">10000円</option>
+        <option value="15000">15000円</option>
+        <option value="20000">20000円</option>
+    </select>
+    <p>予算内で買えるChannel Ｕツアーグッズの組み合わせをランダム出力するレクリエーションサイト</p>
 
-    
     <img src="20250304_194958.jpg" alt="商品画像" width="160">
     <img src="20250304_195000.jpg" alt="ガチャ一覧" width="160">
     <div id="result"></div>
 
+    <a id="tweet-button" href="#" target="_blank">結果をツイート</a>
+
     <script src="gacha.js"></script>
-    <a id="tweet-button" href="https://twitter.com/intent/tweet?text=" target="_blank">結果をツイート</a>
-
-<script>
-function tweetResult(menuItems) {
-    let text = "ツアーグッズ10000円ガチャの結果：\n";
-    text += menuItems.join("\n"); // ガチャ結果をリストに
-    text += "\n#ツアーグッズ10000円ガチャ";
-
-    let url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text);
-    
-    document.getElementById("tweet-button").href = url;
-}
-</script>
 </body>
 </html>
