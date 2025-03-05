@@ -21,7 +21,7 @@ const items = [
     { name: "PLAYER 1セットアップ(ナイロン)M", price: 12000 },
     { name: "PLAYER 1セットアップ(ナイロン)XL", price: 12000 },
     { name: "Channel U ツアーステッカーセット", price: 900 },
-    { name: "メッシュバッグ", price: 1000 }, // 予算が5000円以外だと排出されない
+    { name: "メッシュバッグ", price: 1000 }, // 予算が10000円,15000円,20000円だと排出されない
     { name: "ガチャ", price: 500 }
 ];
 
