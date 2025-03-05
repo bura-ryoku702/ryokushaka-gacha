@@ -32,6 +32,11 @@ document.getElementById("gacha-button").addEventListener("click", function() {
 
     let availableItems = [...items]; // 元のリストを変更しないようコピー
 
+    // 予算が10000円, 15000円, 20000円のとき、メッシュバッグをリストから除外
+    if (budget === 10000 || budget === 15000 || budget === 20000) {
+        availableItems = availableItems.filter(item => item.name !== "メッシュバッグ");
+    }
+
     while (availableItems.length > 0 && totalPrice < budget) {
         let randomIndex = Math.floor(Math.random() * availableItems.length);
         let selectedItem = availableItems[randomIndex];
@@ -49,7 +54,6 @@ document.getElementById("gacha-button").addEventListener("click", function() {
         "ガチャ結果:<br>" + selectedItems.join("<br>") + 
         "<br><br>合計金額: " + totalPrice + "円";
 
-    // ツイートの結果を更新
     tweetResult(selectedItems, totalPrice); // 合計金額も渡す
 });
 
